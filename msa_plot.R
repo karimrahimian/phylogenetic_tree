@@ -1,0 +1,11 @@
+library(ggmsa)
+library(phangorn)
+library(ape)
+library(ggtree)
+library(gridExtra)
+
+primates <- read.phyDat(file = "data/total_msa.fasta", format = "fasta")
+fasta <- system.file("data/total_msa.fasta", package = "ggmsa")
+dist_ml = dist.ml(primates)
+p1 =ggmsa("data/total_msa.fasta", 300, 350, color = "Clustal", font = "DroidSansMono", char_width = 0.5, seq_name = TRUE )
+print(p1)
